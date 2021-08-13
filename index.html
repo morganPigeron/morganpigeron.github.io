@@ -4,13 +4,25 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="en">
 	<head>
 		<title>Morgan's presentation</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Personal presentation"/>
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js" defer></script>
+		<script src="assets/js/jquery.scrollex.min.js" defer></script>
+		<script src="assets/js/jquery.scrolly.min.js" defer></script>
+		<script src="assets/js/browser.min.js" defer></script>
+		<script src="assets/js/breakpoints.min.js" defer></script>
+		<script src="assets/js/util.js" defer></script>
+		<script src="assets/js/main.js" defer></script>
+		<script type="module" src="assets/js/anim.js" defer></script>
+
 	</head>
 	<body class="is-preload">
 
@@ -22,7 +34,8 @@
 							<li><a href="#intro">Welcome</a></li>
 							<li><a href="#one">Who I am</a></li>
 							<li><a href="#two">Resume</a></li>
-							<li><a href="#three">Contact</a></li>
+							<li><a href="#three">A bit of personal projects</a></li>
+							<li><a href="#four">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -81,13 +94,16 @@
 									<p>
 										After three years as a mechanical part designer, 
 										The time as came to take a big decision, continue my studies.
-										Recruited by the R&D office : futur products, mechanisms and solar panels,  
-										I was able to be in apprenticeship as mechatronic engineer.
+										Recruited by the R&D office : futur products, mechanisms and solar arrays,  
+										I was in apprenticeship as mechatronic engineer.
 										This tree years were very interesting, I learned a lot about innovation and 
 										I was finally able to express myself in the three domains:  mechanic, electronic and computing.
 										In different use case : Prototyping, designing, controlling, 
-										testing etc.. R&D is vast domain. Also a patent is currently pending ... 
+										testing etc..
 									</p>
+									<ul class="actions">
+										<li><a href="https://patents.google.com/patent/US20200191548A1/en" class="button">Patent I worked on</a></li>
+									</ul>
 								</div>
 							</div>
 						</section>
@@ -133,21 +149,28 @@
 							<p>
 								Have a look at my skills 
 							</p>
-							<div class="features">
+							<div class="features"> 
+								<section>
+									<span class="icon solid major fa-microchip"></span>
+									<h3>Programming languages for embedded systems and µControler</h3>
+									<ul>
+										<li>C/C++ : Atmel</li>
+										<li>Python : Single Board Computer</li>
+										<li>Shell : Armbian</li>
+									</ul>
+								</section>
 								<section>
 									<span class="icon solid major fa-code"></span>
-									<h3>Programming languages</h3>
-									<p>C, C++, Python, VBA</p>
+									<h3>Programming languages for web and soft</h3>
+									<ul>
+										<li>Python : Flask, Pandas, Tkinter</li>
+										<li>Typescript : Angular, Ionic, RxJS, Jest</li>
+									</ul>
 								</section>
 								<section>
 									<span class="icon solid major fa-cog"></span>
 									<h3>Designing tools</h3>
 									<p>CatiaV5, Fusion360, SolidWorks, Eagle PCB</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-desktop"></span>
-									<h3>Platform</h3>
-									<p>Windows, Linux, embedded Linux (raspbian), Atmel microcontroller</p>
 								</section>
 								<section>
 									<span class="icon major fa-gem"></span>
@@ -161,20 +184,90 @@
 					</section>
 
 				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
+					<section id="three" class="wrapper style2 spotlights">
+						<section>
+							<a href="#" class="image"><img src="images/solarDrone.jpg" alt="" data-position="25% 25%" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>Learning through experimentation</h2>
+									<p>
+										Its easy to find good resources on the internet, but its important to experiment
+										to learn new things. I'm a very curious person and I like to try by myself.
+									</p>
+									<ul class="actions">
+										<li><a href="https://www.codingame.com/profile/a476365d834e1c6cdacc549345e5630f9286463" class="button">CodingGame Profile</a></li>
+									</ul>
+								</div>
+								<div class="features">
+									<section>
+										<span class="icon solid major fa-microchip"></span>
+										<h3>Lidar driver for nodeJs</h3>
+
+										<p>
+											<div style="position: relative;width: 100%;padding-bottom: 100%;height: 0;">
+												<video autoplay loop muted playsinline style="
+												position: absolute;
+												top:0;
+												left: 0;
+												width: 100%;
+												height: 100%;
+											">  
+													<source src="images/lidar.mp4" type="video/mp4">  
+												</video> 
+											</div>
+											NodeJs can be run on single board computer 
+											with Arm Cpu, so I've tested it on Raspberry Pi zero.
+											Cannot process data from the lidar as fast as in C++, 
+											but it's working pretty well. Data visualization
+											is made with P5.js connected through websocket. 
+										</p>
+									</section>
+									<section>
+										<span class="icon solid major fa-print"></span>
+										<h3>Ble printer and webBle service for Angular </h3>
+
+										<p>
+											<div style="position: relative;width: 100%;padding-bottom: 100%;height: 0;">
+												<video autoplay loop muted playsinline style="
+														position: absolute;
+														top:0;
+														left: 0;
+														width: 100%;
+														height: 100%;
+														">  
+													<source src="images/printer.mp4" type="video/mp4"/>
+												</video>
+											</div>
+											When you are too lazy to write down you shopping list on a paper :
+											<ol>
+												<li>Create a Gatt server on a ESP32 board.</li>
+												<li>Create an interface for ESC/POS code to printer.</li>
+												<li>Design and print a case for hiding all the stuff.</li>
+												<li>Develop and deploy a SPA with Web Bluetooth enabled.</li>
+											</ol>
+											That it! ... 
+										</p>
+									</section>
+								</div>
+							</div>
+						</section>
+					</section>
+					
+					<!-- Four -->
+					<section id="four" class="wrapper style1 fade-up">
 						<div class="inner">
 							<h2>Get in touch</h2>
 							<p>Here all my info so don't hesitate to contact me !</p>
 								<ul class="contact">
 									<li>
 										<h3>Address</h3>
-										<span>150 Allée de la marine Royale<br />
-										06210 Mandelieu<br />
+										<span>15 boulevard du docteur Jacques Ugo<br />
+										06220 Vallauris<br />
 										France</span>
 									</li>
 									<li>
 										<h3>Email</h3>
-										<span>m.pigeron@hotmail.fr</span>
+										<span>morgan.pigeron@gmail.com</span>
 									</li>
 									<li>
 										<h3>Phone</h3>
@@ -192,6 +285,7 @@
 						</div>
 					</section>
 
+
 			</div>
 
 		<!-- Footer -->
@@ -203,14 +297,6 @@
 				</div>
 			</footer>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
